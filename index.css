@@ -1,0 +1,377 @@
+:root {
+  /* Value for slider lower and upper */
+  --color-change-value: 50%;
+  --brightness-val: 100%;
+  /* value for slider cursor */
+  --slider-cursor: pointer;
+  /* --------------- Colors */
+  /* ----- Primary */
+  /* Full Slider Bar */
+  --Soft-Cyan: hsl(174, 77%, 80%);
+  /* Slider Backround */
+  --Strong-Cyan: hsl(174, 86%, 45%);
+  /* Discount Background */
+  --Light-Grayish-Red: hsl(14, 92%, 95%);
+  /* Discount Text */
+  --Light-Red: hsl(15, 100%, 70%);
+  /* CTA Text */
+  --Pale-Blue: hsl(226, 100%, 87%);
+
+  /* ----- Neutral */
+  /* Pricing Component Background */
+  --White: hsl(0, 0%, 100%);
+  /* Main Background */
+  --Very-Pale-Blue: hsl(230, 100%, 99%);
+  /* Empty Slider Bar */
+  --Light-Grayish-Blue-slide: hsl(224, 65%, 95%);
+  /* Toggle Background */
+  --Light-Grayish-Blue: hsl(223, 50%, 87%);
+  /* Text */
+  --Grayish-Blue: hsl(225, 20%, 60%);
+  /* Text & CTA Background */
+  --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+  /*  -------------- Typography */
+  /* Font-Family */
+  --ff-sans: "Manrope", Arial, sans-serif;
+}
+/* ---------------------------------------------------- Global / Resets
+--------------------------------------------------------------------------------------- */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+input,
+button,
+textarea {
+  font: inherit;
+}
+body {
+  padding: 3rem 0;
+  font-family: var(--ff-sans);
+  background: url(./images/bg-pattern.svg) no-repeat, var(--Very-Pale-Blue);
+  background-size: 100% 50%;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+}
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+/* ---------------------------------------------------- Header
+--------------------------------------------------------------------------------------- */
+header {
+  text-align: center;
+  font-size: 15px;
+  background: url(./images/pattern-circles.svg) no-repeat left 52% top 0;
+  background-size: contain;
+
+  padding-block: 2rem;
+  margin-block-end: 35px;
+}
+.header__title {
+  color: var(--Dark-Desaturated-Blue);
+  font-size: 1.5em;
+}
+.header__desc {
+  color: var(--Grayish-Blue);
+  line-height: 0.5;
+}
+
+/* ---------------------------------------------------- Main 
+--------------------------------------------------------------------------------------- */
+.main__pricing-comp {
+  border-radius: 10px;
+  background-color: var(--White);
+  padding: 2rem 0.75rem;
+  box-shadow: 0 15px 6px hsla(223, 50%, 87%, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+.pricing-comp-info-cont {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.range-cont {
+  width: 90%;
+}
+.pricing-comp-title {
+  color: var(--Grayish-Blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9125em;
+  font-weight: 800;
+  order: 0;
+}
+.pricing-comp-info {
+  order: 2;
+  color: var(--Dark-Desaturated-Blue);
+  font-weight: 800;
+  font-size: 2.125rem;
+}
+.pricing-com-info__shadow-txt {
+  color: var(--Grayish-Blue);
+  font-size: 1rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+@media (min-width: 768px) {
+  .main__pricing-comp {
+    align-items: center;
+  }
+  .pricing-comp-info-cont {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .pricing-comp-title {
+    flex-basis: 50%;
+    color: var(--Grayish-Blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.125em;
+    font-weight: 800;
+    justify-self: start;
+    order: 0;
+  }
+  .pricing-comp-info {
+    order: 1;
+    flex-basis: 50%;
+    text-align: right;
+    color: var(--Dark-Desaturated-Blue);
+    font-weight: 800;
+    font-size: 3rem;
+  }
+  .range-cont {
+    order: 2;
+    margin-block-end: 50px;
+    flex-basis: 100%;
+  }
+}
+/* ------------------------------------------------ Range Input Styling */
+/* ------------------------------- Thumb */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: var(--slider-cursor);
+
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: url(./images/icon-slider.svg) no-repeat left 50% top 50%,
+    var(--Strong-Cyan);
+  background-size: 50% 30%;
+  box-shadow: 0 15px 30px hsla(174, 86%, 45%, 0.8);
+  cursor: var(--slider-cursor);
+  filter: brightness(var(--brightness-val));
+
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  margin-top: -22.5px;
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  filter: brightness(var(--brightness-val));
+  background: url(./images/icon-slider.svg) no-repeat left 50% top 50%,
+    var(--Strong-Cyan);
+  background-size: 50% 30%;
+  box-shadow: 0 15px 30px hsla(174, 86%, 45%, 0.8);
+  cursor: var(--slider-cursor);
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  width: 45px;
+  height: 45px;
+  filter: brightness(var(--brightness-val));
+  border-radius: 50%;
+  background: url(./images/icon-slider.svg) no-repeat left 50% top 50%,
+    var(--Strong-Cyan);
+  background-size: 50% 30%;
+  box-shadow: 0 15px 30px hsla(174, 86%, 45%, 0.8);
+  cursor: var(--slider-cursor);
+}
+
+/* ------------------------------- Slider Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  cursor: var(--slider-cursor);
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    var(--Soft-Cyan) 0%,
+    var(--Soft-Cyan) var(--color-change-value),
+    var(--Light-Grayish-Blue-slide) var(--color-change-value),
+    var(--Light-Grayish-Blue-slide) 100%
+  );
+}
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  cursor: var(--slider-cursor);
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    var(--Soft-Cyan) 0%,
+    var(--Soft-Cyan) var(--color-change-value),
+    var(--Light-Grayish-Blue-slide) var(--color-change-value),
+    var(--Light-Grayish-Blue-slide) 100%
+  );
+}
+input[type="range"]::-ms-track {
+  height: 8px;
+  cursor: var(--slider-cursor);
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    var(--Soft-Cyan) 0%,
+    var(--Soft-Cyan) var(--color-change-value),
+    var(--Light-Grayish-Blue-slide) var(--color-change-value),
+    var(--Light-Grayish-Blue-slide) 100%
+  );
+}
+input[type="range"]::-ms-fill-lower {
+  height: 8px;
+  cursor: var(--slider-cursor);
+  border-radius: 20px;
+  background-color: var(--Soft-Cyan);
+}
+input[type="range"]::-ms-fill-upper {
+  height: 8px;
+  cursor: var(--slider-cursor);
+  border-radius: 20px;
+  background-color: var(--Light-Grayish-Blue-slide);
+}
+
+/* --------------------- Billing Info */
+.billing-choices-cont {
+  display: flex;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  color: var(--Grayish-Blue);
+}
+/* --------------------- Slider */
+#sliderCheckBoxCont {
+  position: relative;
+  cursor: pointer;
+}
+.color-span {
+  display: block;
+  background-color: var(--Pale-Blue);
+  border-radius: 40px;
+  width: 50px;
+  height: 25px;
+}
+#sliderThumb {
+  position: absolute;
+  border-radius: 50%;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
+  width: 18px;
+  height: 18px;
+  background-color: var(--White);
+  transition: 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#sliderCheckBox {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+}
+#sliderCheckBox:checked + #sliderThumb {
+  transform: translateY(-50%) translateX(24px);
+}
+#sliderCheckBox:checked ~ .color-span {
+  background-color: var(--Strong-Cyan);
+}
+.discount-txt {
+  color: var(--Light-Red);
+  background-color: var(--Light-Grayish-Red);
+  padding: 2px 5px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 40px;
+}
+/* ------------------------------------ CTA Section */
+.cta-cont {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 2px solid var(--Very-Pale-Blue);
+  margin: 0 auto;
+}
+.plan-perks-cont {
+  margin-bottom: 30px;
+}
+.check-icon {
+  margin-right: 15px;
+}
+.perk-txt {
+  display: inline-block;
+  margin: 8px 0;
+  color: var(--Grayish-Blue);
+  line-height: 1;
+}
+.cta-btn {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 40px;
+  background-color: var(--Dark-Desaturated-Blue);
+  color: var(--Pale-Blue);
+  padding: 0.7rem 0;
+  transition: color 150ms ease-out;
+  border: none;
+}
+.cta-btn:hover {
+  color: var(--White);
+}
+
+@media (min-width: 768px) {
+  .billing-choices-cont {
+    margin-right: 20%;
+  }
+  .cta-cont {
+    text-align: left;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .plan-perks-cont {
+    flex-basis: 70%;
+  }
+  .cta-btn {
+    flex-basis: 30%;
+  }
+}
