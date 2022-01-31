@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header__title">Simple, traffic-based pricing</h1>
+      <p class="header__desc">Sign-up for our 30-day trial.</p>
+      <p class="header__desc">No credit card required.</p>
+    </header>
+    <main>
+      <div class="main__pricing-comp">
+        <div class="pricing-comp-info-cont">
+          <p class="pricing-comp-title">100K Pageviews</p>
+          <p class="pricing-comp-info">
+            $16.00 <span class="pricing-com-info__shadow-txt">/ month</span>
+          </p>
+          <div class="range-cont">
+            <input type="range" id="rangeInput" min="0" max="100" />
+          </div>
+        </div>
+        <div class="billing-choices-cont">
+          <p class="monthly-label">Monthly Billing</p>
+          <label for="sliderCheckBox" id="sliderCheckBoxCont">
+            <input type="checkbox" id="sliderCheckBox" />
+            <span id="sliderThumb"></span>
+            <span class="color-span"></span>
+          </label>
+          <p class="yearly-label">Yearly Billing</p>
+          <p class="discount-txt">
+            -25% <span class="mobile-hidden">discount</span>
+          </p>
+        </div>
+        <div class="cta-cont">
+          <div class="plan-perks-cont">
+            <div class="perk-item">
+              <img
+                src="./images/icon-check.svg"
+                alt="check mark"
+                class="check-icon"
+              />
+              <p class="perk-txt">Unlimited websites</p>
+            </div>
+            <div class="perk-item">
+              <img
+                src="./images/icon-check.svg"
+                alt="check mark"
+                class="check-icon"
+              />
+              <p class="perk-txt">100% data ownership</p>
+            </div>
+            <div class="perk-item">
+              <img
+                src="./images/icon-check.svg"
+                alt="check mark"
+                class="check-icon"
+              />
+              <p class="perk-txt">Email reports</p>
+            </div>
+          </div>
+          <button type="button" class="cta-btn">Start my trial</button>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
